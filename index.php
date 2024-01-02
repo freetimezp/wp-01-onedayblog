@@ -17,6 +17,7 @@
     <?php
     //navbar
     get_template_part('template-parts/nav');
+    get_template_part('template-parts/slider');
 
     if (have_posts()) {
         while (have_posts()) {

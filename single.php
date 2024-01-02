@@ -5,10 +5,6 @@ get_header();
 //navbar
 get_template_part('template-parts/nav');
 
-if (is_home()) {
-    //home page slider
-    get_template_part('template-parts/slider');
-}
 ?>
 
 <div class="p-4 card-group justify-content-center">
@@ -18,7 +14,7 @@ if (is_home()) {
         while (have_posts()) {
             the_post();
 
-            get_template_part('template-parts/post');
+            get_template_part('template-parts/single-post');
         }
     }
     ?>

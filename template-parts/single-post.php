@@ -1,5 +1,10 @@
-<div class="card m-4 rounded border text-center" style="width: 280px; max-width: 280px; box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);">
-    <?php the_post_thumbnail('post-preview') ?>
+<div class="rounded text-center">
+    <?php the_post_thumbnail(
+        'post-thumbnail',
+        [
+            'style' => 'width: 1000px; height: 55vh; display: block; margin: 0 auto;'
+        ]
+    ) ?>
     <div class="card-body">
         <h5 class="card-title">
             <?php the_title() ?>

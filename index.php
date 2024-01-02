@@ -12,33 +12,23 @@
 </head>
 
 <body <?php body_class() ?>>
-    <?php wp_body_open() ?>
+    <?php wp_body_open();
 
-    <?php
     //navbar
     get_template_part('template-parts/nav');
     get_template_part('template-parts/slider');
+    ?>
 
-    if (have_posts()) {
-        while (have_posts()) {
-            the_post();
-    ?>
-            <div>
-                <h1>
-                    <?php the_title() ?>
-                </h1>
-                <p>
-                    <?php the_excerpt() ?>
-                </p>
-                <a href="<?php the_permalink() ?>">
-                    Read More
-                </a>
-            </div>
-            <hr>
-    <?php
+    <div class="p-4 card-group justify-content-center">
+        <?php
+        if (have_posts()) {
+            while (have_posts()) {
+                the_post();
+                get_template_part('template-parts/post');
+            }
         }
-    }
-    ?>
+        ?>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

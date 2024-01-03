@@ -21,8 +21,14 @@ if (is_home()) {
             get_template_part('template-parts/post');
         }
     }
+
     ?>
 </div>
+
+<?php
+//pagination
+get_template_part('template-parts/pagination');
+?>
 
 
 <?php

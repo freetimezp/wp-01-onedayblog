@@ -24,3 +24,17 @@ img {
 .page-numbers {
     font-size: 20px;
 }
+
+.custom-logo-link {
+    margin-right: 1rem;
+}
+
+.custom-logo {
+    max-width: 100px;
+    max-height: 28px;
+}
+
+
+
+
+

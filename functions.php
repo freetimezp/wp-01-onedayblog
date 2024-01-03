@@ -17,3 +17,17 @@ add_action('init', function () {
     //add special size for post images, you can add many size, just change name
     add_image_size('post-preview', 280, 180, true);
 });
+
+//custom logo
+add_action('after_setup_theme', function () {
+    $defaults = array(
+        'height' => 100,
+        'width' => 400,
+        'flex-height' => true,
+        'flex-width' => true,
+        'header-text' => array('site-title', 'site-description'),
+        'unlink-homepage-logo' => true,
+    );
+
+    add_theme_support('custom-logo', $defaults);
+});

@@ -16,6 +16,15 @@ add_action('init', function () {
     add_theme_support('post-thumbnails');
     //add special size for post images, you can add many size, just change name
     add_image_size('post-preview', 280, 180, true);
+
+    //register menus
+    register_nav_menus(
+        array(
+            'header-menu' => __('Header Menu'),
+            'sidebar-menu' => __('Sidebar Menu'),
+            'footer-menu' => __('Footer Menu'),
+        )
+    );
 });
 
 //custom logo

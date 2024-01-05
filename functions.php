@@ -74,3 +74,4 @@ add_action('after_setup_theme', function () {
 });
 
 require get_template_directory() . '/template-parts/walker.php';
+require get_template_directory() . '/template-parts/widgets.php';

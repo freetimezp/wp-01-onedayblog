@@ -1,4 +1,18 @@
 <div class="rounded text-center">
+    <?php
+    $post_id = get_the_ID();
+    $views = get_post_meta($post_id, 'views', true);
+    //create and update attr views in db table wp_postmeta
+    if ($views > 0) {
+        update_post_meta($post_id, 'views', $views + 1);
+    } else {
+        update_post_meta($post_id, 'views', 1);
+    }
+    $views = get_post_meta($post_id, 'views', true);
+
+    echo "Views: " . $views . "<br><br>";
+    ?>
+
     <?php the_post_thumbnail(
         'post-thumbnail',
         [

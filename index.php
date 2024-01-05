@@ -13,7 +13,7 @@ if (is_home()) {
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9 p-2 p-md-4 card-group justify-content-center align-items-center">
+        <div class="col-md-9 p-2 p-md-4 card-group justify-content-center">
             <?php
             if (have_posts()) {
                 //for every posts in wp

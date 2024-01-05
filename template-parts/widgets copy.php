@@ -22,23 +22,17 @@ class Most_viewed_widgets extends WP_Widget
 
     public function widget($args, $instance)
     {
-        $args = [
-            'meta_key' => 'views',
-            'post_type' => 'post',
-            'posts_per_page' => 2,
-            'order' => 'DESC',
-            'orderby' => 'meta_value_num'
-        ];
-        $myposts = new WP_Query($args);
-
-        if ($myposts->have_posts()) {
-            //for every posts in wp
-            while ($myposts->have_posts()) {
-                $myposts->the_post();
-
-                get_template_part('template-parts/post');
-            }
+        //display widget on page
+        echo $args['before_widget'];
+        if (!empty($instance['title'])) {
+            echo $args['before_title'] . apply_filters('widget_title', $instance['title']) . $args['after_title'];
         }
+        echo '<div class="textwidget">';
+        echo esc_html__($instance['text'], 'text_domain');
+        echo "<br>";
+        echo esc_html__($instance['comment'], 'text_domain');
+        echo '</div>';
+        echo $args['after_widget'];
     }
 
     public function form($instance)

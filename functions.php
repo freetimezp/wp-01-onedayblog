@@ -27,6 +27,38 @@ add_action('init', function () {
     );
 });
 
+
+
+//register sidebars 
+add_action('widgets_init', function () {
+    register_sidebar(array(
+        'name'          => 'Primary Sidebar',
+        'id'            => 'sidebar-1',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    register_sidebar(array(
+        'name'          => 'Footer Sidebar 1',
+        'id'            => 'sidebar-footer-1',
+        'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li></ul>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+    register_sidebar(array(
+        'name'          => 'Footer Sidebar 2',
+        'id'            => 'sidebar-footer-2',
+        'before_widget' => '<ul><li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li></ul>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ));
+});
+
+
+
 //custom logo
 add_action('after_setup_theme', function () {
     $defaults = array(

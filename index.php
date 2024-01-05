@@ -11,24 +11,33 @@ if (is_home()) {
 }
 ?>
 
-<div class="p-4 card-group justify-content-center">
-    <?php
-    if (have_posts()) {
-        //for every posts in wp
-        while (have_posts()) {
-            the_post();
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9 p-2 p-md-4 card-group justify-content-center align-items-center">
+            <?php
+            if (have_posts()) {
+                //for every posts in wp
+                while (have_posts()) {
+                    the_post();
 
-            get_template_part('template-parts/post');
-        }
-    }
+                    get_template_part('template-parts/post');
+                }
+            }
 
-    ?>
+            ?>
+        </div>
+        <div class="col-md-3 p-2 p-md-4" style="background-color: #eee;">
+            <?php dynamic_sidebar('sidebar-1') ?>
+        </div>
+    </div>
 </div>
+
 
 <?php
 //pagination
 get_template_part('template-parts/pagination');
 ?>
+
 
 
 <?php

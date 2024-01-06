@@ -13,7 +13,7 @@ if (is_home()) {
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-9 p-2 p-md-4 card-group justify-content-center">
+        <div class="col-md-9 p-2 p-md-4 card-group justify-content-center" style="align-items: flex-start;">
             <?php
             if (have_posts()) {
                 //for every posts in wp
@@ -30,14 +30,12 @@ if (is_home()) {
             <?php dynamic_sidebar('sidebar-1') ?>
         </div>
     </div>
+
+    <?php
+    //pagination
+    get_template_part('template-parts/pagination');
+    ?>
 </div>
-
-
-<?php
-//pagination
-get_template_part('template-parts/pagination');
-?>
-
 
 
 <?php

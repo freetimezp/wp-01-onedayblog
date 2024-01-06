@@ -31,12 +31,16 @@ class Most_viewed_widgets extends WP_Widget
         ];
         $myposts = new WP_Query($args);
 
+        if (!empty($instance['title'])) {
+            echo apply_filters('widget_title', $instance['title']) . ":";
+        }
+
         if ($myposts->have_posts()) {
             //for every posts in wp
             while ($myposts->have_posts()) {
                 $myposts->the_post();
 
-                get_template_part('template-parts/post');
+                get_template_part('template-parts/post-small');
             }
         }
     }
